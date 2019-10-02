@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>井字遊戲</title>
+    <style>
+        td{
+            text-align:center;
+            width: 100px;
+        }
+    </style>
+
+    <script>
+        var count = 0;
+        function SetPoint(obj) {
+            
+            if(obj.innerText!="_") return;
+
+            if (count % 2 == 0) {
+                obj.innerText = 'O';
+                count++;
+            }
+            else {
+                obj.innerText = 'X';
+                count++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div style="font-size: 30px">
+        <table border="1" style="width:300px;height: 300px;">
+            <tr >
+                <td id="A1" onclick="SetPoint(this)">_</td>
+                <td id="A2" onclick="SetPoint(this)">_</td>
+                <td id="A3" onclick="SetPoint(this)">_</td>
+            </tr>
+
+            <tr>
+                <td id="B1" onclick="SetPoint(document.getElementById('B1'))">_</td>
+                <td id="B2" onclick="SetPoint(document.getElementById('B2'))">_</td>
+                <td id="B3" onclick="SetPoint(document.getElementById('B3'))">_</td>
+            </tr>
+            <tr>
+                <td id="C1" onclick="SetPoint(document.getElementById('C1'))">_</td>
+                <td id="C2" onclick="SetPoint(document.getElementById('C2'))">_</td>
+                <td id="C3" onclick="SetPoint(document.getElementById('C3'))">_</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
