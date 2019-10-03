@@ -5,34 +5,40 @@
     <meta charset="UTF-8">
     <title>井字遊戲</title>
     <style>
-        td{
-            text-align:center;
+        td {
+            text-align: center;
             width: 100px;
         }
     </style>
 
+
     <script>
         var count = 0;
         function SetPoint(obj) {
-            
-            if(obj.innerText!="_") return;
+
+            if (obj.innerText != "_") return;
 
             if (count % 2 == 0) {
-                obj.innerText = 'O';
+                 obj.innerText = 'O';
                 count++;
+
+                if(A1.innerText==A2.innerText==A3.innerText){
+                    alert("You Win")
+                }
             }
             else {
                 obj.innerText = 'X';
                 count++;
             }
         }
+
     </script>
 </head>
 
 <body>
     <div style="font-size: 30px">
         <table border="1" style="width:300px;height: 300px;">
-            <tr >
+            <tr>
                 <td id="A1" onclick="SetPoint(this)">_</td>
                 <td id="A2" onclick="SetPoint(this)">_</td>
                 <td id="A3" onclick="SetPoint(this)">_</td>

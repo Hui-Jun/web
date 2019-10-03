@@ -1,0 +1,21 @@
+#table1 {
+  width: 400px;
+  border: 3px solid yellow;
+  border-collapse: collapse;
+}
+
+#Td1,
+#Td2 {
+  border: 1px solid red;
+  padding: 4px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+#Td3 {
+  border: 2px solid blue;
+  padding: 3px;
+  text-align: center;
+  vertical-align: bottom;
+}
+/*# sourceMappingURL=style.css.map */

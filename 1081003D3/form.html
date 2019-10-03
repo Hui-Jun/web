@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>表單</title>
+
+</head>
+
+<body>
+    <form id="form1" action="http://isbaas.azurewebsites.net/WebForms/Form2Mail.aspx?mailto=lung954116@gmail.com&redirect=http://www.google.com" method="POST">
+        <fieldset>
+            <legend>>>個人資料＿<b><em>必填</em></b></legend>
+
+            <table id='Table1' border="2" width=700px>
+                <tr id='T1'>
+                    <td>
+                        <label id="a1">姓名：</label>
+                        <input type="text" value="" id="User：" name="field_user">
+                    </td>
+                    <td>
+                        <label id="a1">密碼：</label>
+                        <input type="password" value="" id="Password：" name="field_password">
+                    </td>
+                    <td>
+                        <label id="a1">性別：</label>
+                        <input type="radio" name="sex" value="男" />男
+                        <input type="radio" name="sex" value="女" />女
+                    </td>
+
+                </tr>
+            </table>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>>>個人資料＿<b><em>通訊資料</em></b></legend>
+            <table border="3" width=700px>
+                <tr id='T2'>
+                    <td>
+                        <label>手機：</label>
+                        <input type="text" value="" id="手機：" name="field_phone">
+                    </td>
+
+                    <td>
+                        <label>E-mail：</label>
+                        <input type="text" value="" id="E-maill：" name="field_email">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <hr />
+                    </td>
+                </tr>
+
+                <tr id='T3'>
+                    <td>
+                        <label>區號：</label>
+                        <input type="text" value="" id="3+2：" name="field_3">
+                    </td>
+                    <td colspan="2">
+                        <label>縣市：</label>
+                        <select name="city">
+                            <option value="請選擇縣市" selecte>請選擇縣市</option>
+                            <option value="基隆市">基隆市</option>
+                            <option value="臺北市">臺北市</option>
+                            <option value="新北市">新北市</option>
+                            <option value="桃園市">桃園市</option>
+                            <option value="新竹市">新竹市</option>
+                            <option value="新竹縣">新竹縣</option>
+                            <option value="苗栗縣">苗栗縣</option>
+                            <option value="台中市">台中市</option>
+                            <option value="彰化縣">彰化縣</option>
+                            <option value="南投縣">南投縣</option>
+                            <option value="雲林縣">雲林縣</option>
+                            <option value="嘉義市">嘉義市</option>
+                            <option value="嘉義縣">嘉義縣</option>
+                            <option value="臺南市">臺南市</option>
+                            <option value="高雄市">高雄市</option>
+                            <option value="屏東縣">屏東縣</option>
+                            <option value="台東縣">台東縣</option>
+                            <option value="花蓮縣">花蓮縣</option>
+                            <option value="宜蘭縣">宜蘭縣</option>
+                            <option value="澎湖縣">澎湖縣</option>
+                            <option value="金門縣">金門縣</option>
+                            <option value="連江縣">連江縣</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <label>地址：</label>
+                        <input type="text" value="" id="地址：" name="field_address">
+                    </td>
+
+                </tr>
+            </table>
+
+
+        </fieldset>
+
+        <fieldset>
+            <legend>>>個人資料＿<b><em>興趣</em></b></legend>
+
+            <div>
+                <label>興趣：</label>
+                <input type="checkbox" name="hobby " value="音樂 " />音樂
+                <input type="checkbox" name="hobby " value="運動 " />運動
+                <input type="checkbox" name="hobby " value="閱讀 " />閱讀
+                <input type="checkbox" name="hobby " value="電影 " />電影
+                <input type="checkbox" name="hobby " value="其他 " />其他:<input type="text" value="" id="another" name="field_another">
+            </div>
+
+            <div>
+                <p>專長：</p>
+                <textarea id="comments" cols="40" rows="10"></textarea>
+            </div>
+
+        </fieldset>
+        <input type="reset" value="重新填寫" />
+        <button type="submit">送件</button>
+    </form>
+
+</body>
+
+</html>
