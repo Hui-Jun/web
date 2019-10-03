@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,GAAG,CAAC;EACA,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "1081003D3style.scss",
+        "_formstyle.scss"
+    ],
+    "names": [],
+    "file": "1081003D3style.css"
+}
