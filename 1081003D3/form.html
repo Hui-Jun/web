@@ -8,12 +8,40 @@
     <link rel="stylesheet" href="../CSS/1081003D3style/1081003D3style.css">
     <title>表單</title>
 
+    <script>
+        //getElementById(抓取頁面上的元素)
+        function getElement(name) {
+            return document.getElementById(name);
+        }
+
+        //判斷是否可以送件
+        function Button_Submit() {
+            //抓取頁面上的checkboc1，取得是否checked
+            var isChecked = getElement('MustCheck').checked;
+            //如果是，就return true
+            if (isChecked) return true;
+            //否則就... 
+            alert('您未同意遵守個資使用規範!');
+            return false;
+        }
+
+        //當網頁載入完成後執行
+        window.onload = function() {
+            //hook event(在form1被submit時...)
+            getElement('form1').onsubmit = function() {
+                //呼叫 Button_Submit()
+                return Button_Submit();
+            };
+        };
+    </script>
+
 </head>
 
 <body>
     <form id="form1" action="http://isbaas.azurewebsites.net/WebForms/Form2Mail.aspx?mailto=lung954116@gmail.com&redirect=https://firstlab.azurewebsites.net/1081003D3/form.html" method="POST">
-        <fieldset>
-            <legend>>>個人資料＿<b><em>必填</em></b></legend>
+
+        <fieldset id='Fieldset'>
+            <legend id='legend'>個人資料＿<b><em>必填</em></b></legend>
 
             <table border="0" width=700px>
                 <tr>
@@ -33,11 +61,12 @@
 
                 </tr>
             </table>
-
         </fieldset>
 
-        <fieldset>
-            <legend>>>個人資料＿<b><em>通訊資料</em></b></legend>
+        <br />
+
+        <fieldset id='Fieldset'>
+            <legend id='legend'>個人資料＿<b><em>通訊資料</em></b></legend>
             <table border="0" width=700px>
                 <tr>
                     <td>
@@ -103,8 +132,10 @@
 
         </fieldset>
 
-        <fieldset>
-            <legend>>>個人資料＿<b><em>興趣</em></b></legend>
+        <br />
+
+        <fieldset id='Fieldset'>
+            <legend id='legend'>個人資料＿<b><em>興趣</em></b></legend>
 
             <div>
                 <label>興趣：</label>
@@ -112,7 +143,7 @@
                 <input type="checkbox" name="hobby " value="運動 " />運動
                 <input type="checkbox" name="hobby " value="閱讀 " />閱讀
                 <input type="checkbox" name="hobby " value="電影 " />電影
-                <input type="checkbox" name="hobby " value="其他 " />其他:<input type="text" value="" id="another" name="field_another">
+                <input type="checkbox" name="other " value=x />其他:<input type="text" value="" id="another" name="field_another">
             </div>
 
             <div>
@@ -121,9 +152,13 @@
             </div>
 
         </fieldset>
+
+        <input type="checkbox" id="MustCheck" name="MustCheck">遵守並同意個資使用規範
+        <br />
         <input type="reset" value="重新填寫" />
-        <button type="submit">送件</button>
+        <button type="submit">提交表單</button>
     </form>
+
 
 </body>
 

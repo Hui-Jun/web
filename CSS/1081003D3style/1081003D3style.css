@@ -1,4 +1,16 @@
 #a1 {
   color: blue;
 }
+
+#Fieldset {
+  border-radius: 10px;
+  border: solid #6b6555;
+}
+
+#legend {
+  background-color: #b1aca5;
+  border: 1px solid #6b6555;
+  border-radius: 10px;
+  padding: 10px;
+}
 /*# sourceMappingURL=1081003D3style.css.map */
