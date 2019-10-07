@@ -11,31 +11,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
-        function Show(msg) {
-            document.getElementById('Label').innerHTML += msg + "<br />";
-        }
+        // 初始化
+        $(function() {
 
-        // function Button_Click() {
-        //     let height = document.getElementById('height').value;
-        //     let weight = document.getElementById('weight').value;
-        //     let bmi = Count(height, weight);
-        //     Show(bmi);
-        // }
-
-        function Count(height, weight) {
-            bmi = weight / (height / 100 * height / 100);
-            return bmi;
-        }
-        295
-        // jqc寫法如下
+        });
+        // jQuery寫法
         $(document).ready(function() {
-            $('#CountButton').click(function(e) {
+            $('#Button1').click(function(e) {
                 var height = $('#textHeight').val();
-                var weight = $('#textHeight').val();
-                var bmi = GetBmi(height, Weight);
+                var weight = $('#textWeight').val();
+                var bmi = weight / (height / 100 * height / 100);
                 $('#result').html(bmi);
             });
-
         })
     </script>
 
@@ -44,31 +31,19 @@
 
 
 <body>
-    <div>
-        <div class="container">
-            <div>
-                <P>請輸入您的資訊：</P>
-                <form class="form-group">
-                    <div class="col">
-                        <p>身高：</p>p>
-                        <input type='text' value="" class="form-control" id="height" name="a_height">
-                    </div>
-
-                    <div class="col">
-                        <p>體重:</p>p>
-                        <input type='text' value="" class="form-control" id="weight" name="a_weight">
-                    </div>
-
-                    <div class="col">
-                        <label id='Label'>您的BMI值：</label>
-                    </div>
-
-                    <div class="col">
-                        <button id='CountButton' class="btn btn-outline-secondary btn-sm" type="button">計算</button>
-                    </div>
-                </form>
-            </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h2>BMI計算器(jQuery版本)</h2>
+            <label>身高：</label>
+            <input id="textHeight" class="form-control" value="">
+            <label>體重：</label>
+            <input id="textWeight" value="" class="form-control">
+            <br/>
+            <button class="btn btn-primary" id="Button1">Count</button>
+            <span id="result"></span>
         </div>
+        <div class="col-md-3"></div>
     </div>
 </body>
 
