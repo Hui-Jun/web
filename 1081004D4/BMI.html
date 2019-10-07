@@ -12,19 +12,67 @@
 
     <script>
         // 初始化
-        $(function() {
-
-        });
-        // jQuery寫法
         $(document).ready(function() {
-            $('#Button1').click(function(e) {
+
+            //計算BMI
+            $('#Button1').click(function() {
                 var height = $('#textHeight').val();
                 var weight = $('#textWeight').val();
                 var bmi = weight / (height / 100 * height / 100);
+                // span物件使用$('#ID').html(要輸出的值);
                 $('#result').html(bmi);
             });
+
+            //全選功能
+            $('#CheckAll').click(function() {
+                var check = $("#CheckAll").prop("checked");
+                $('#CheckBoxGroup input').prop("checked", check);
+            });
+
+            //下拉式選單
+            $('#sel01').change(function() {
+                var val = $(this).val();
+                $('#ImgGroup2 img').removeClass();
+                $('#ImgGroup2 img').addClass(val);
+            });
+
+            //鼠標
+            $('img').hover(
+                function() {
+                    // 滑鼠移入到圖片上的動作
+
+                    //cursor：更改滑鼠游標型式、transform：更改圖片大小倍率
+                    $(this).css("cursor", "pointer")
+                    $(this).css("transform", "scale(1.1)").css("transition-duration", "0.1s");
+                },
+                function() {
+                    // 滑鼠移出圖片上的動作
+                    $(this).css("transform", "scale(1)").css("transition-duration", "0.1s");
+                });
+
+
+
+
+
+
+
         })
     </script>
+
+
+    <style>
+        .br15 {
+            border-radius: 15px;
+        }
+        
+        .br30 {
+            border-radius: 30px;
+        }
+        
+        .br50 {
+            border-radius: 50px;
+        }
+    </style>
 
 </head>
 
@@ -39,12 +87,59 @@
             <input id="textHeight" class="form-control" value="">
             <label>體重：</label>
             <input id="textWeight" value="" class="form-control">
-            <br/>
+            <br />
+            <input id="CheckAll" type="checkbox" />勾選全部
+            <div id="CheckBoxGroup">
+                <input type="checkbox" />項目1
+                <input type="checkbox" />項目2
+                <input type="checkbox" />項目3
+                <input type="checkbox" />項目4
+                <input type="checkbox" />項目5
+                <input type="checkbox" />項目6
+                <input type="checkbox" />項目7
+                <input type="checkbox" />項目8
+            </div>
+            <br />
             <button class="btn btn-primary" id="Button1">Count</button>
             <span id="result"></span>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-3">
+        </div>
     </div>
+
+    <!-- Lab:下拉選單、圖片縮放效果 -->
+    <div class="row">
+        <!-- 下拉選單 -->
+        <div id="ImgGroup2" class="row" style="margin:10px; padding-top:100px">
+            <div class="col-12">
+                <select id="sel01">
+                    <option value="br15">15px</option>
+                    <option value="br30">30px</option>
+                    <option value="br50">50px</option>
+                </select>
+            </div>
+            <!-- 圖片載入 -->
+            <div class="col-2">
+                <img src="../1081004D4/img/1.jpg" style="width:100%" class="img-responsive" />
+            </div>
+            <div class="col-2">
+                <img src="../1081004D4/img/2.jpg" style="width:100%" class="img-responsive" />
+            </div>
+            <div class="col-2">
+                <img src="../1081004D4/img/3.jpg" style="width:100%" class="img-responsive" />
+            </div>
+            <div class="col-2">
+                <img src="../1081004D4/img/4.jpg" style="width:100%" class="img-responsive" />
+            </div>
+            <div class="col-2">
+                <img src="../1081004D4/img/5.jpg" style="width:100%" class="img-responsive" />
+            </div>
+            <div class="col-2">
+                <img src="../1081004D4/img/6.gif" style="width:100%" class="img-responsive" />
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
